@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles_materias_page.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+    <link rel="icon" type="image/x-icon" href="assets/Logo.ico"> <!-- Favicon -->
+    <title>Tabla de Asignaturas</title>
+</head>
+
+<body>
+    <div class="container">
+        <img src="assets/Logo.svg" alt="Logo" class="logo" />
+        <div class="header">
+                <h1>INST. EDUC. EL TRIUNFO SANTA TERESA</h1>
+             <p class="user-greeting">Hola, <span class="highlight">ADMINISTRADORTST</span></p>
+                </div>
+            
+            <br>
+        <br>
+        
+        <div class="content-container"> <!-- Contenedor nuevo -->
+            <div class="table_header">
+                <h2>Asignaturas</h2>
+                <button id="createButton">Crear nueva</button>
+                <button id="goToHomeBtn" onclick="goToHome()">Inicio</button>
+                <button id="scrollToTopBtn" onclick="scrollToTop()">Subir</button>
+                
+    
+                <div class="input_search">
+                    <input type="search" id="searchInput" placeholder="Buscar" />
+                    <i class="bi bi-search" id="search"></i>
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre de Asignatura <i class="bi bi-chevron-expand"></i></th>
+                        <th>Grupo <i class="bi bi-chevron-expand"></i></th>
+                        <th>Localización <i class="bi bi-chevron-expand"></i></th>
+                        <th>Docente <i class="bi bi-chevron-expand"></i></th>
+                        <th class="cedula-column">Cédula <i class="bi bi-chevron-expand"></i></th>
+                        <th>Acciones <i class="bi bi-chevron-expand"></i></th>
+                    </tr>
+                </thead>
+                <tbody id="subjectTableBody">
+                    <!--Materias-->
+            <tbody id="subjectTableBody">
+                <!-- Biología -->
+ <tr>
+     <td>Biología</td>
+     <td>6° - 11°</td>
+     <td>Aula 201</td>
+     <td>Laura Gómez</td>
+     <td class="cedula-column">1010101011</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ <tr>
+     <td>Biología</td>
+     <td>6° - 11°</td>
+     <td>Aula 201</td>
+     <td>Andrés Pérez</td>
+     <td class="cedula-column">1010101012</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ <tr>
+     <td>Biología</td>
+     <td>6° - 11°</td>
+     <td>Aula 201</td>
+     <td>Claudia Martínez</td>
+     <td class="cedula-column">1010101013</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ 
+ <!-- Química -->
+ <tr>
+     <td>Química</td>
+     <td>8° - 11°</td>
+     <td>Aula 202</td>
+     <td>Carlos Torres</td>
+     <td class="cedula-column">1010101014</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ <tr>
+     <td>Química</td>
+     <td>8° - 11°</td>
+     <td>Aula 202</td>
+     <td>Diana Fernández</td>
+     <td class="cedula-column">1010101015</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ <tr>
+     <td>Química</td>
+     <td>8° - 11°</td>
+     <td>Aula 202</td>
+     <td>Mario Castro</td>
+     <td class="cedula-column">1010101016</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ 
+ <!-- Física -->
+ <tr>
+     <td>Física</td>
+     <td>9° - 11°</td>
+     <td>Aula 203</td>
+     <td>Javier López</td>
+     <td class="cedula-column">1010101017</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ <tr>
+     <td>Física</td>
+     <td>9° - 11°</td>
+     <td>Aula 203</td>
+     <td>Silvia Rojas</td>
+     <td class="cedula-column">1010101018</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ 
+ <!-- Matemáticas -->
+ <tr>
+     <td>Matemáticas</td>
+     <td>6° - 11°</td>
+     <td>Aula 204</td>
+     <td>Santiago Bedoya</td>
+     <td class="cedula-column">1010101019</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ <tr>
+     <td>Matemáticas</td>
+     <td>6° - 11°</td>
+     <td>Aula 204</td>
+     <td>María Sánchez</td>
+     <td class="cedula-column">1010101020</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ <tr>
+     <td>Matemáticas</td>
+     <td>6° - 11°</td>
+     <td>Aula 204</td>
+     <td>Fernando Ruiz</td>
+     <td class="cedula-column">1010101021</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ 
+ <!-- Razonamiento Lógico -->
+ <tr>
+     <td>Razonamiento Lógico</td>
+     <td>6° - 11°</td>
+     <td>Aula 205</td>
+     <td>Ana Gómez</td>
+     <td class="cedula-column">1010101022</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ <tr>
+     <td>Razonamiento Lógico</td>
+     <td>6° - 11°</td>
+     <td>Aula 205</td>
+     <td>César López</td>
+     <td class="cedula-column">1010101023</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ <tr>
+     <td>Razonamiento Lógico</td>
+     <td>6° - 11°</td>
+     <td>Aula 205</td>
+     <td>Beatriz Torres</td>
+     <td class="cedula-column">1010101024</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ 
+ <!-- Educación Artística -->
+ <tr>
+     <td>Educación Artística</td>
+     <td>6° - 11°</td>
+     <td>Aula 206</td>
+     <td>Isabel Morales</td>
+     <td class="cedula-column">1010101025</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ 
+ <!-- Ciencias Económicas y Políticas -->
+ <tr>
+     <td>Ciencias Económicas y Políticas</td>
+     <td>10° - 11°</td>
+     <td>Aula 207</td>
+     <td>Óscar Velasco</td>
+     <td class="cedula-column">1010101026</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ 
+ <!-- Educación Física -->
+ <tr>
+     <td>Educación Física</td>
+     <td>6° - 11°</td>
+     <td>Aula 208</td>
+     <td>David Sánchez</td>
+     <td class="cedula-column">1010101027</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ <tr>
+     <td>Educación Física</td>
+     <td>6° - 11°</td>
+     <td>Aula 208</td>
+     <td>Vanessa Castillo</td>
+     <td class="cedula-column">1010101028</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+ 
+ <!-- Emprendimiento -->
+ <tr>
+     <td>Emprendimiento</td>
+     <td>9° - 11°</td>
+     <td>Aula 209</td>
+     <td>Felipe Pérez</td>
+     <td class="cedula-column">1010101029</td>
+     <td>
+         <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+         <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+     </td>
+ </tr>
+
+ <!-- Tecnología e Informática -->
+<tr>
+    <td>Tecnología e Informática</td>
+    <td>6° - 8°</td>
+    <td>Sistemas 1</td>
+    <td>Andrea Martínez</td>
+    <td class="cedula-column">1034567890</td>
+    <td>
+        <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+        <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+    </td>
+</tr>
+
+<tr>
+    <td>Tecnología e Informática</td>
+    <td>9° - 11°</td>
+    <td>Sistemas 2</td>
+    <td>Carlos González</td>
+    <td class="cedula-column">1045678901</td>
+    <td>
+        <i class="bi bi-pencil-square" onclick="editSubject(this)"></i>
+        <i class="bi bi-trash" onclick="deleteSubject(this)"></i>
+    </td>
+</tr>
+
+            </tbody>
+
+            </table>
+            
+            <div class="table_footer">
+                <p>Total de filas: <span id="rowCount">10</span></p>
+            </div>
+            
+            <div class="footer">
+                <p>&copy; CODEWURLZEN 2024</p>
+            </div>
+        </div> <!-- Fin del contenedor nuevo -->
+    </div>   
+</body>
+
+<div id="subjectModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">Agregar Asignatura</h2>
+        <br>
+        <div class="modal-body">
+            <label for="subjectName">Nombre de Asignatura</label>
+            <input type="text" id="subjectName" placeholder="Nombre de Asignatura" required />
+            <label for="subjectGrade">Grado</label>
+            <input type="text" id="subjectGrade" placeholder="Grado" required />
+            <label for="subjectLocation">Localización</label>
+            <input type="text" id="subjectLocation" placeholder="Localización" required />
+            <label for="subjectTeacher">Docente</label>
+            <input type="text" id="subjectTeacher" placeholder="Docente" required />
+            <label for="subjectCedula">Cédula</label>
+            <input type="text" id="subjectCedula" placeholder="Cédula" required />
+            <button id="saveSubjectButton">Guardar</button>
+        </div>
+    </div>
+</div>
+
+<script src="scripts/script_materias_pages.js"></script>
+
+
+

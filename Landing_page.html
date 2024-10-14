@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="styles/styles_landing_page.css">
+    <link rel="icon" type="image/x-icon" href="assets/Logo.ico"> <!-- Favicon -->
+</head>
+<body>
+    <div class="login-container">
+        <img src="assets/Logo_app.svg" alt="Logo de la aplicación"> <!-- Aquí puedes colocar el logo de la aplicación -->
+        <h2>Inicio de Sesión</h2>
+        <div class="institution-name">
+            <input type="text" id="institution" placeholder="Nombre de la institución" required>
+        </div>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button onclick="login()">Iniciar Sesión</button>
+        <a href="#" class="forgot-password" onclick="forgotPassword()">Olvidé mi contraseña</a> <!-- Enlace para recuperar la contraseña -->
+    </div>
+
+    <script src="scripts/script_landing_page.js"></script>
+</body>
+</html>

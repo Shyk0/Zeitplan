@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz Escolar</title>
+    <link rel="stylesheet" href="styles/styles_home_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/Logo.ico"> <!-- Favicon -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="custom-container">
+        <img src="assets/LOGO TST.png" alt="Logo" class="logo" />
+        
+        <div class="header">
+            <h2>INST. EDUC. EL TRIUNFO SANTA TERESA</h2>
+            <p id="date-time" ></p>
+        </div>
+        <div class="menu-box">
+            <div class="user-greeting">
+                <h3>¡Hola, <span class="highlight">ADMINISTRADOR TST</span>! ¿Qué quieres hacer hoy?</h3>
+                <br>
+                <br>
+                <div class="menu-container dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        Menú
+                    </button>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul>
+                            <li><a href="Materias_page.html" onclick="setActiveTab('Materias')" class="dropdown-item"><i class="fas fa-book"></i> Materias</a></li>
+                            <li><a href="#" onclick="setActiveTab('Docentes')" class="dropdown-item"><i class="fas fa-chalkboard-teacher"></i> Docentes</a></li>
+                            <li><a href="#" onclick="setActiveTab('Crear Horario')" class="dropdown-item"><i class="fas fa-clock"></i> Crear horario</a></li>
+                            <li><a href="#" onclick="setActiveTab('Visualizar Horarios')" class="dropdown-item"><i class="fas fa-eye"></i> Visualizar horarios</a></li>
+                            <li><a href="#" onclick="openSettingsModal(); setActiveTab('Ajustes');" class="dropdown-item"><i class="fas fa-cog"></i> Ajustes</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer">
+                        <p>&copy; CODEWURLZEN 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de ajustes -->
+        <div id="settingsModal" class="modal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <span class="close" id="closeSettings" aria-label="Close">&times;</span>
+                    <div class="modal-header">
+                        <h2 id="settingsModalLabel">Ajustes de la Plataforma</h2>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Botones de navegación -->
+                        <div class="settings-buttons mb-3">
+                            <button class="btn btn-primary" onclick="showSection('info-personal')">Información Personal</button>
+                            <button class="btn btn-primary" onclick="showSection('data-controls')">Controles de Datos</button>
+                            <button class="btn btn-primary" onclick="showSection('security')">Seguridad</button>
+                            <button class="btn btn-primary" onclick="showSection('support')">Soporte Técnico</button>
+                        </div>
+
+                        <!-- Contenido del modal -->
+                        <div id="info-personal" class="settings-content">
+                            <h3>Información Personal</h3>
+                            <div class="info-container">
+                                <div class="info-fields">
+                                    <label>Nombre del Centro Educativo:</label>
+                                    <input type="text" value="INST. EDUC. EL TRIUNFO SANTA TERESA" readonly>
+                                    
+                                    <label>Rector:</label>
+                                    <input type="text" value="MIGUEL ALBEIRO ZAPATA CORDOBA" readonly>
+                                    
+                                    <label>Persona a cargo de la plataforma:</label>
+                                    <input type="text" value="CARLOS ANDRES TRUJILLO" readonly>
+                                </div>
+                                <div class="info-logo">
+                                    <img src="assets/LOGO TST.png" alt="Logo" class="logo" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="data-controls" class="settings-content" style="display: none;">
+                            <h3>Controles de Datos</h3>
+                            <p>Aquí podrás gestionar los datos del sistema.</p>
+                        </div>
+
+                        <div id="security" class="settings-content" style="display: none;">
+                            <h3>Seguridad</h3>
+                            <p>Aquí podrás gestionar la seguridad de tu cuenta.</p>
+                        </div>
+
+                        <div id="support" class="settings-content" style="display: none;">
+                            <h3>Soporte Técnico</h3>
+                            <p>Aquí encontrarás información de contacto para soporte técnico.</p>
+                        </div>
+
+                        <button class="btn btn-danger" onclick="logout()">Cerrar Sesión</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/script_home_page.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

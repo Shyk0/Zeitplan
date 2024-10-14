@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-image: url('../assets/background.svg');
+    background-size: cover;
+    background-position: center;
+    color: #000000;
+}
+
+.custom-container {
+    width: 60%; 
+    margin: 5% auto; 
+    padding: 30px; 
+    background: rgb(243, 240, 240);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.404); 
+}
+
+
+.logo {
+    display: block;
+    margin: 0 auto 10px; /* Reducido */
+    width: 150px; /* Ajustado a un tamaño más pequeño */
+    padding-bottom: 10px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #28306E; /* Cambiar el fondo del encabezado */
+    color: #efefef; /* Cambiar el color del texto del encabezado */
+}
+
+.menu-box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px; /* Reducido */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px; /* Reducido */
+    background-color: #28306E; /* Cambiar el fondo de la caja de menú y pie de página */
+    color: #efefef; /* Cambiar el color del texto */
+}
+
+.user-greeting {
+    text-align: center;
+}
+
+.menu-container {
+    position: relative;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 10px; /* Reducido */
+    font-size: 12px; /* Reducido */
+}
+
+.highlight {
+    color: #cf4d30;
+    font-weight: bold;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px; /* Aumentado ligeramente para más espacio interno */
+    width: 40%; /* Ajuste de tamaño a 40% para ser compacto */
+    border-radius: 8px;
+    position: relative;
+    max-height: 80%;
+    overflow-y: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar más realce */
+}
+
+.settings-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los botones */
+}
+
+.settings-content {
+    margin-top: 20px; /* Añade más espacio entre el contenido */
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between; /* Distribuir los elementos dentro de la sección */
+    margin-top: 20px;
+}
+
+.info-fields {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.info-logo {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.settings-menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 10px; /* Reducido */
+    justify-content: space-around;
+    margin-bottom: 10px; /* Reducido */
+}
+
+.settings-content {
+    display: none;
+}
+
+.settings-content.active {
+    display: block;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2rem; /* Reducido */
+}
