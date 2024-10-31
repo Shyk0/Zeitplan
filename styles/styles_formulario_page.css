@@ -1,45 +1,47 @@
 body {
     font-family: Arial, sans-serif;
-    
     background-position: center;
-    margin: 0;
+    margin: 0, auto;
     padding: 0;
-}
-body{
-    background-image: url('../assets/background.svg');
-    background-size: cover;
-    background-position: center;
-    color: #000000;
+    color: #ffffff;
+    
 }
 .form-container-arriba {
+    background-image: url('../assets/Logo\ Proyecto\ zeitplan.jpeg'); /* direccion de imagen*/
+    background-repeat: no-repeat; /*Para que no aparesca duplicada*/
+    background-position: center;
+    background-size: contain; /* para que solo sea del tamano del contenedor*/
+
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 50px;
     justify-content: space-between;
     padding: 20px;
-    background-color: #efefef;
     max-width: 100%;
+    min-height: 200px;
     margin: 0 auto;
-    margin: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+
 .form-container {
+    /*Ajustes para que el contenedor ocupe el espacio necesario*/
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
     padding: 20px;
-    background-color: #efefef;
-    max-width: 800px;
+    background-color: darkblue;
+    max-width: 97%;
     margin: 0 auto;
-    border-radius: 8px;
+    border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 
 .form-container label, .form-container select, .form-container input, .form-container textarea, .form-container button {
-    flex: 1 1 45%;
+    flex: 75%;
     min-width: 200px;
     font-size: 16px;
 }
@@ -62,8 +64,7 @@ textarea {
 
 button {
     padding: 30px;
-    background-color: #28306E;
-    color: white;
+    background-color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -73,27 +74,10 @@ button {
     max-width: 250px;
     box-sizing: border-box;
     align-self: flex-start;
-
-
 }
-
-.boton-dos {
-    background-color: #28306E;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    
-}
-
-.boton-dos:hover {
-    background-color: darkblue;
-}
-
 
 button:hover {
-    background-color: darkblue;
+    background-color: #3498db;
 }
 
 /* Estilos para la vista previa */
@@ -101,7 +85,7 @@ button:hover {
     margin: 20px auto;
     padding: 20px;
     max-width: 800px;
-    background-color: #ffffff;
+    background-color: #3498db;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -118,8 +102,8 @@ button:hover {
 
 #grupos-container{
     display: flex;
-    flex-direction: column; /* Asegura que cada grupo esté en una nueva línea */
-    gap: 10px; /* Espacio entre grupos */
+    flex-wrap: wrap; /* Asegura que cada grupo esté en una nueva línea */
+    gap: 20px; /* Espacio entre grupos */
     flex-grow: 1; /* Permite que el contenedor crezca, pero no el botón */
 }
         
@@ -136,8 +120,8 @@ button:hover {
 
 
 @media (max-width: 600px) {
+    /*Es para que se pueda visualizar en cualquier ancho de pantalla */
     .form-container {
         flex-direction: column;
     }
 }
-
