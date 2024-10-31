@@ -1,33 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let grupoCounter = 1; // Contador para nuevos grupos
+    let grupoCounter = 1;
 
-    // Función para agregar un nuevo grupo
-    function agregarGrupo() {
-        grupoCounter++;
-        const nuevoGrupoId = 'grupo' + grupoCounter;
+        function agregarGrupo() {
+            grupoCounter++;
+            const nuevoGrupoId = 'grupo' + grupoCounter;
 
-        // Crear un nuevo grupo en la lista de 'no asisten'
-        const selectNoAsisten = document.getElementById('no-asisten');
-        const newOption = document.createElement('option');
-        newOption.value = nuevoGrupoId;
-        newOption.text = 'Grupo ' + grupoCounter;
-        selectNoAsisten.appendChild(newOption);
+            // Agrega un nuevo grupo al select 'no-asisten'
+            const selectNoAsisten = document.getElementById('no-asisten');
+            const newOption = document.createElement('option');
+            newOption.value = nuevoGrupoId;
+            newOption.text = 'Grupo ' + grupoCounter;
+            selectNoAsisten.appendChild(newOption);
 
-        // Crear un nuevo select para materias
-        const nuevoGrupoDiv = document.createElement('div');
-        nuevoGrupoDiv.innerHTML = `
-            <label for="materias-${nuevoGrupoId}">Materias para Grupo ${grupoCounter}:</label>
-            <select id="materias-${nuevoGrupoId}">
-              <option value="matematicas">Matemáticas</option>
-              <option value="ciencias">Ciencias</option>
-            </select>
-        `;
-        document.getElementById('grupos-container').appendChild(nuevoGrupoDiv);
+            // Crea un nuevo div con select de materias para el nuevo grupo
+            const nuevoGrupoDiv = document.createElement('div');
+            nuevoGrupoDiv.innerHTML = `
+                <label for="materias-${nuevoGrupoId}">Materias para Grupo ${grupoCounter}:</label>
+                <select id="materias-${nuevoGrupoId}">
+                  <option value="matematicas">Matemáticas</option>
+                  <option value="ciencias">Ciencias</option>
+                </select>
+            `;
+            document.getElementById('grupos-container').appendChild(nuevoGrupoDiv);
+            console.log("FUNCIONA SI FUNCIONA");
     }
 
+        //Llamamos al evento desde aqui sin tener un "onClick" desde el HTML
+        document.getElementById('agregar-grupo').addEventListener('click', agregarGrupo);
     // Función para actualizar la vista previa
     function actualizarVistaPrevia() {
-        const noAsisten = Array.from(document.getElementById('no-asisten').selectedOptions).map(option => option.text);
+
+        
+        
         const actividadEspecial = document.getElementById('actividad-especial').value;
         const novedades = document.getElementById('novedades').value;
 
@@ -88,34 +92,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Inicializar Select2 para el campo de selección múltiple
-    $(document).ready(function() {
-        $('#no-asisten').select2({
-            placeholder: 'Seleccione los grupos que no asisten',
-            width: '100%'
-        });
-
-        // Evento para agregar un nuevo grupo
-        document.getElementById('agregar-grupo').addEventListener('click', function(e) {
-            e.preventDefault();
-            agregarGrupo();
-        });
-
-        // Evento para actualizar la vista previa
-        document.getElementById('generar-horario').addEventListener('click', function(e) {
-            e.preventDefault();
-            actualizarVistaPrevia();
-        });
-
-        // Evento para actualizar las materias cuando cambia el valor de "no asisten"
-        document.getElementById('no-asisten').addEventListener('change', function() {
-            actualizarMaterias();
-        });
-
-
-
-
-    });
-
     
-
-});
+    });
