@@ -21,4 +21,28 @@ function forgotPassword() {
     }
 }
 
-console.log("HOLAAAAAAa")
+
+let currentImageIndex = 0;
+const images = document.querySelectorAll('.carousel-image');
+const totalImages = images.length;
+
+// Establece el tiempo que se mostrará cada imagen (2 segundos)
+const displayTime = 5000; 
+
+function showNextImage() {
+    // Oculta la imagen actual
+    images[currentImageIndex].classList.remove('active');
+
+    // Incrementa el índice de la imagen actual
+    currentImageIndex = (currentImageIndex + 1) % totalImages; // Bucle infinito
+
+    // Muestra la siguiente imagen
+    images[currentImageIndex].classList.add('active');
+}
+
+// Inicializa el carrusel mostrando la primera imagen
+images[currentImageIndex].classList.add('active');
+
+// Inicia el carrusel y cambia de imagen cada 2 segundos
+setInterval(showNextImage, displayTime);
+

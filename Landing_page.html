@@ -8,15 +8,21 @@
     <link rel="icon" type="image/x-icon" href="assets/Logo.ico"> <!-- Favicon -->
 </head>
 <body>
-    <div class="login-container">
-        <img src="assets/Logo_app.svg" alt="Logo de la aplicación"> <!-- Aquí puedes colocar el logo de la aplicación -->
-        <h2>Inicio de Sesión</h2>
-        <div class="institution-name">
-            <input type="text" id="institution" placeholder="Nombre de la institución" required>
-        </div>
-        <input type="password" id="password" placeholder="Contraseña" required>
-        <button onclick="login()">Iniciar Sesión</button>
-        <a href="#" class="forgot-password" onclick="forgotPassword()">Olvidé mi contraseña</a> <!-- Enlace para recuperar la contraseña -->
+    <div class="carousel-container">
+        <!-- Imágenes del carrusel -->
+        <div class="carousel-image" style="background-image: url('assets/bg4.png');"></div>
+        <div class="carousel-image" style="background-image: url('assets/bg3.png');"></div>
+        <div class="carousel-image" style="background-image: url('assets/bg2.png');"></div>
+        <div class="carousel-image" style="background-image: url('assets/bg1.png');"></div>
+    </div>
+
+    <div class="container">
+        <img src="assets/Logo_app.svg" alt="Logo">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" placeholder="Usuario">
+        <input type="password" placeholder="Contraseña">
+        <button>Ingresar</button>
+        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
     </div>
 
     <script src="scripts/script_landing_page.js"></script>

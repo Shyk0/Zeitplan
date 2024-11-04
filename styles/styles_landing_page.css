@@ -1,85 +1,124 @@
-body {
+:root {
+    /* Definición de variables globales para colores */
+    --color-backgroundLanding: #0F2B39;
+    --color-input: #efefef;
+    --color-background: #b6bebe;
+    --color-button: #28306E;
+    --color-button-hover: #1f2659;
+    --color-text: #000000;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: 'Arial', sans-serif;
-    background: url('../assets/landing_page_anim.gif') no-repeat center center fixed; /* Ruta corregida */
+}
+
+/* Fondo carrusel que cubre toda la pantalla */
+.background-carousel {
+    position: fixed; /* Fijo para que el fondo no se mueva */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Coloca el fondo detrás del contenido */
+}
+
+/* Estilos para el carrusel */
+.carousel-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+
+/* Estilos del cuerpo y contenedor */
+body {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    color: #000000; 
-    background-color: #efefef;/* Fondo claro para toda la página */
-    padding: 40px;
+    padding-left: 40px;
+    color: var(--color-text);
+}
+
+.container {
+    color: var(--color-text);
+    background-color: var(--color-input);
+    padding: 30px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    width: 300px;
-}
-
-.login-container {
-    background-color: #28306E;
-    color: #efefef; /* Texto dentro del contenedor */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 400px;
     text-align: center;
+    z-index: 1; /* Asegura que el contenido esté sobre el fondo */
 }
 
-.login-container h2 {
+.container h2 {
     margin-bottom: 20px;
 }
 
-.login-container img {
+.container img {
     width: 160px;
     margin-bottom: 15px;
     filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.384));
 }
 
-.login-container input {
+.container input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px 0;
+    margin-bottom: 10px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
-
 }
 
-.login-container .institution-name {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.login-container button {
+.container button {
     width: 100%;
     padding: 12px;
-    background-color: #28306E;
-    color: #efefef;
+    background-color: var(--color-button);
+    color: var(--color-input);
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.6s;
     margin-bottom: 10px;
 }
 
-.login-container button:hover {
-    background-color: #28306E;
+.container button:hover {
+    background-color: var(--color-button-hover);
 }
 
-.forgot-password {
+.container .forgot-password {
     display: block;
-    margin-top: 10px;
-    color: #000000;
-    font-size: 14px;
-    text-decoration: none;
-    font-size: 0.9rem;
     margin-top: 15px;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    text-decoration: none;
 }
 
-.forgot-password:hover {
+.container .forgot-password:hover {
     text-decoration: underline;
 }

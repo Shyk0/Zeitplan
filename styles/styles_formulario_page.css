@@ -1,17 +1,24 @@
+:root{
+    --color-backgroundForm: #0c2434;
+    --color-input: #93c4e6;
+    --color-background: #b6bebe;
+}
+
+/*Configuracion de letra*/
 body {
     font-family: Arial, sans-serif;
     background-position: center;
     margin: 0, auto;
     padding: 0;
-    color: #ffffff;
-    
+    color: #ffff;
+    background-color: var(--color-background);
 }
+
 .form-container-arriba {
-    background-image: url('../assets/Logo\ Proyecto\ zeitplan.jpeg'); /* direccion de imagen*/
+    background-image: url('../assets/Logo_app.svg'); /* direccion de imagen*/
     background-repeat: no-repeat; /*Para que no aparesca duplicada*/
     background-position: center;
     background-size: contain; /* para que solo sea del tamano del contenedor*/
-
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
@@ -20,10 +27,7 @@ body {
     max-width: 100%;
     min-height: 200px;
     margin: 0 auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 
 .form-container {
     /*Ajustes para que el contenedor ocupe el espacio necesario*/
@@ -32,11 +36,20 @@ body {
     gap: 20px;
     justify-content: space-between;
     padding: 20px;
-    background-color: darkblue;
     max-width: 97%;
     margin: 0 auto;
     border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+    background-color: var(--color-backgroundForm);
+    /* Sombra para navegadores con prefijo -webkit- (Chrome, Safari, Opera, versiones antiguas) */
+    -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+
+    /* Sombra para navegadores con prefijo -moz- (Firefox, versiones antiguas) */
+    -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+
+    /* Sombra para navegadores modernos, sin prefijos */
+box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+
 }
 
 
@@ -53,9 +66,10 @@ label {
 
 select, input, textarea {
     padding: 10px;
-    border: 1px solid #efefef;
+    border: 1px solid #93c4e6;
     border-radius: 4px;
     width: 100%;
+    background: var(--color-background);
 }
 
 textarea {
