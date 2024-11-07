@@ -1,4 +1,5 @@
 :root{
+    /*Se necesita una paleta de colores mas amplia y adecuada*/
     --color-backgroundForm: #0c2434;
     --color-input: #93c4e6;
     --color-background: #b6bebe;
@@ -14,11 +15,60 @@ body {
     background-color: var(--color-background);
 }
 
+/* Estilo del contenedor del menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Botón que muestra el menú */
+.dropdown-button {
+    background-color: var(--color-backgroundForm);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Contenedor del menú desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--color-background);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+/* Botones dentro del menú */
+.dropdown-content button {
+    margin: 1px;
+    background-color: var(--color-backgroundForm);
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.dropdown-content button:hover {
+    background-color: var(--color-input)
+}
+
+/* Mostrar el menú al pasar el mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
 .form-container-arriba {
     background-image: url('../assets/Logo_app.svg'); /* direccion de imagen*/
     background-repeat: no-repeat; /*Para que no aparesca duplicada*/
     background-position: center;
-    background-size: contain; /* para que solo sea del tamano del contenedor*/
+    background-size: contain; /* para que solo sea del tamaño del contenedor*/
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
@@ -48,7 +98,7 @@ body {
     -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
 
     /* Sombra para navegadores modernos, sin prefijos */
-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
 
 }
 
@@ -78,7 +128,7 @@ textarea {
 
 button {
     padding: 30px;
-    background-color: white;
+    background-color: var(--color-background);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -91,7 +141,7 @@ button {
 }
 
 button:hover {
-    background-color: #3498db;
+    background-color: var(--color-input);
 }
 
 /* Estilos para la vista previa */

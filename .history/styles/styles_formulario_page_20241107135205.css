@@ -1,0 +1,191 @@
+:root{
+    --color-backgroundForm: #0c2434;
+    --color-input: #93c4e6;
+    --color-background: #b6bebe;
+}
+
+/*Configuracion de letra*/
+body {
+    font-family: Arial, sans-serif;
+    background-position: center;
+    margin: 0, auto;
+    padding: 0;
+    color: #ffff;
+    background-color: var(--color-background);
+}
+
+/* Estilo del contenedor del menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Botón que muestra el menú */
+.dropdown-button {
+    background-color: var(--color-backgroundForm);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Contenedor del menú desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--color-background);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+/* Botones dentro del menú */
+.dropdown-content button {
+    margin: 1px;
+    background-color: var(--color-backgroundForm);
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown-content button:hover {
+    background-color: var(--color-input)
+}
+
+/* Mostrar el menú al pasar el mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.form-container-arriba {
+    background-image: url('../assets/Logo_app.svg'); /* direccion de imagen*/
+    background-repeat: no-repeat; /*Para que no aparesca duplicada*/
+    background-position: center;
+    background-size: contain; /* para que solo sea del tamano del contenedor*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 100%;
+    min-height: 200px;
+    margin: 10 auto;
+}
+
+.form-container {
+    /*Ajustes para que el contenedor ocupe el espacio necesario*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 97%;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+    background-color: var(--color-backgroundForm);
+    /* Sombra para navegadores con prefijo -webkit- (Chrome, Safari, Opera, versiones antiguas) */
+    -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+
+    /* Sombra para navegadores con prefijo -moz- (Firefox, versiones antiguas) */
+    -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+
+    /* Sombra para navegadores modernos, sin prefijos */
+box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+
+}
+
+
+.form-container label, .form-container select, .form-container input, .form-container textarea, .form-container button {
+    flex: 75%;
+    min-width: 200px;
+    font-size: 16px;
+}
+
+
+label {
+    font-weight: bold;
+}
+
+select, input, textarea {
+    padding: 10px;
+    border: 1px solid #93c4e6;
+    border-radius: 4px;
+    width: 100%;
+    background: var(--color-background);
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: auto; /* Cambiado de 100% a auto para que no crezca demasiado */
+    min-width: 200px;
+    max-width: 250px;
+    box-sizing: border-box;
+    align-self: flex-start;
+}
+
+button:hover {
+    background-color: #3498db;
+}
+
+/* Estilos para la vista previa */
+.preview-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #3498db;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.preview-container h2 {
+    text-align: center;
+    font-size: 22px;
+    color: #3498db;
+}
+
+.preview-item {
+    margin-bottom: 10px;
+}
+
+#grupos-container{
+    display: flex;
+    flex-wrap: wrap; /* Asegura que cada grupo esté en una nueva línea */
+    gap: 20px; /* Espacio entre grupos */
+    flex-grow: 1; /* Permite que el contenedor crezca, pero no el botón */
+}
+        
+.boton-agregar {
+    flex: 1 1 100%; /* Hace que el botón ocupe todo el ancho */
+    display: flex; /* Permite alinear el botón en el centro */
+    justify-content: center; /* Centra el botón */
+}
+.boton-dos {
+    flex: 1 1 100%; /* Hace que el botón ocupe todo el ancho */
+    display: flex; /* Permite alinear el botón en el centro */
+    justify-content: center; /* Centra el botón */
+}
+
+
+@media (max-width: 600px) {
+    /*Es para que se pueda visualizar en cualquier ancho de pantalla */
+    .form-container {
+        flex-direction: column;
+    }
+}

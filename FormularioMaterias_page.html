@@ -8,8 +8,19 @@
     <link rel="stylesheet" href="styles/styles_formulario_page.css">
 </head>
 <body>
-    <div class ="form-container-arriba"></div>
-    
+    <!--Lista desplegable en la zona superior -->
+    <div class="dropdown">
+        <button class="dropdown-button">Menú Desplegable</button>
+        <div class="dropdown-content">
+            <button><a href="Home_page.html">Ir al home page</a></button>
+            <!--Aqui van el resto de los botones de las secciones-->
+        </div>
+    </div>
+
+    <!--Contenedor para la imagen en la parte superior-->
+    <div class ="form-container-arriba"></div> 
+
+    <!--Contenedor principal del Form-->
     <div class="form-container">
         <label for="nomArchivo">Nombre del archivo:</label>
         <input type="text" id="nomArchivo" placeholder="Ej. Horario 1">
@@ -26,7 +37,7 @@
               <option value="B">B</option>
             </select>
         </div>
-
+        <!--Boton provicional hasta que se abra la base de datos-->
         <button id="agregar-grupo">Agregar Grupo</button>
 
         <label for="actividad-especial">Agregar Actividad Especial:</label>
@@ -35,6 +46,7 @@
         <label for="novedades">Novedades del Día:</label>
         <textarea id="novedades" rows="4" placeholder="Escribe las novedades aquí..."></textarea>
 
+        <!--Es para previsualizar el horario escogido-->
         <button id="generar-horario">Generar Horario Automáticamente</button>
     </div>
 
@@ -48,5 +60,4 @@
     <!-- Scripts -->
     <script src="scripts/script_formulario_page.js"></script>
 </body>
-<!--ahhhh probando -->
 </html>
