@@ -146,5 +146,5 @@ function scrollToTop() {
 }
 
 function goToHome() {
-    window.location.href = 'CodeHTML.html'; // Redirige a la página de inicio
+    window.location.href = 'Home_page.html'; // Redirige a la página de inicio
 }

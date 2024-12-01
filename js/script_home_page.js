@@ -21,7 +21,7 @@ document.getElementById('closeSettings').onclick = closeSettingsModal;
 
 // Función de cierre de sesión
 function logout() {
-    window.location.href = "Landing_page.html"; // Redirige al inicio de sesión
+    window.location.href = "/index.html"; // Redirige al inicio de sesión
 }
 
 //Funcion para mostrar fecha

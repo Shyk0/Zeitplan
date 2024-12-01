@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url('../assets/background.svg');
+    background-image: url('/src/assets/images/background.svg');
     background-size: cover;
     background-position: center;
     color: #000000;

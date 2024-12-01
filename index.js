@@ -6,7 +6,7 @@ function login() {
 
     if (institutionName === 'EL TRIUNFO SANTA TERESA') {
         alert(`Bienvenido ${institutionName}!`);
-        window.location.href = "..\components\Home_page.html"; // Redirigir a la página deseada
+        window.location.href = "/components/Home_page.html"; // Redirigir a la página deseada
     } else {
         alert('Nombre de la institución incorrecto. Intenta nuevamente.');
     }

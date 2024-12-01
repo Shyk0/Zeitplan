@@ -65,7 +65,7 @@ body {
 
 
 .form-container-arriba {
-    background-image: url('../assets/Logo_app.svg'); /* direccion de imagen*/
+    background-image: url('/src/assets/images/Logo.svg'); /* direccion de imagen*/
     background-repeat: no-repeat; /*Para que no aparesca duplicada*/
     background-position: center;
     background-size: contain; /* para que solo sea del tamaño del contenedor*/
