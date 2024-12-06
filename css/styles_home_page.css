@@ -6,9 +6,9 @@
 }
 
 body {
-    background-image: url('/src/assets/images/background.svg');
+    background-image: url('/src/assets/images/Página-Inicio-Strokbig.jpg');
     background-size: cover;
-    background-position: center;
+    background-repeat: no-repeat;
     color: #000000;
 }
 
@@ -20,6 +20,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.404); 
 }
+
 
 
 .logo {
@@ -37,13 +38,16 @@ body {
 }
 
 .menu-box {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 10px; /* Reducido */
+    position: absolute; /* Cambia la posición del elemento para poder usar top y right */
+    top: 10px;          /* Ajusta la distancia desde la parte superior de la pantalla */
+    right: 20px;        /* Ajusta la distancia desde la parte derecha de la pantalla */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin-bottom: 10px; /* Reducido */
-    background-color: #28306E; /* Cambiar el fondo de la caja de menú y pie de página */
-    color: #efefef; /* Cambiar el color del texto */
+    color: #efefef;  
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    background-color: #040a36;
 }
 
 .user-greeting {
@@ -141,4 +145,11 @@ body {
     right: 10px;
     cursor: pointer;
     font-size: 1.2rem; /* Reducido */
+}
+
+@media (max-width: 600px) {
+    /*Es para que se pueda visualizar en cualquier ancho de pantalla */
+    .form-container {
+        flex-direction: column;
+    }
 }
