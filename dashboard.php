@@ -6,6 +6,17 @@ if (!isset($_SESSION['usuario'])) {
     header("Location: index.php"); // Redirigir al login si no está autenticado
     exit();
 }
+
+// Lógica para cambiar el logo según el usuario
+$logo_url = "assets/LogoPNG.png"; // Logo por defecto
+
+// Aquí puedes agregar más condiciones para cambiar el logo según el usuario
+if ($_SESSION['usuario'] == 'admin') {
+    $logo_url = "assets/LogoPNG.png"; // Logo para el usuario admin
+} elseif ($_SESSION['usuario'] == 'El Triunfo Santa Teresa') {
+    $logo_url = "assets/LOGO TST.png"; // Logo para el usuario colegio
+} 
+// Agregar más condiciones si es necesario
 ?>
 
 <!DOCTYPE html>
@@ -26,49 +37,49 @@ if (!isset($_SESSION['usuario'])) {
             padding: 0;
         }
 
-        .navbar {
-            top: auto;
-            z-index: 1;
-            background-color: #6a11cb;
-            height: 3.12em;
-            color: white;
+        /* Contenedor principal de la barra */
+        .navbar-container {
             display: flex;
+            align-items: center;
+            background-color: #1a3b5d; /* Azul oscuro */
+            height: 3.12em;
             justify-content: space-between;
             padding: 0 20px;
-            border: 10px black;
+            position: relative;
+            z-index: 1;
         }
 
+        /* Contenedor del logo (ahora un enlace) */
         .logo-container {
             background-color: white;
-            margin-top: 0.5rem;
-            height: 100px;
-            width: 100px;
+            height: 6em;
+            width: 6em;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            margin-left: 15px;
-            border-radius: 10px;
-            z-index: -1;
+            position: absolute;
+            top: 0.4em;
+            left: 20px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+            border-radius: 10px; /* Bordes redondeados */
+            z-index: 2;
         }
 
+        /* Imagen del logo */
         .logo-container img {
-            max-width: 95%;
-            max-height: 95%;
+            height: 90%;
+            width: 90%;
+            object-fit: contain;
         }
 
-        .navbar .nav-left {
+        /* Barra de navegación */
+        .navbar {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 20px;
-        }
-
-        .user-info {
-            align-items: flex-end;
-        }
-
-        .user-info span {
-            font-weight: bold;
             color: white;
+            margin-left: 6.5em; /* Reducido para acercar el "Inicio" al logo */
         }
 
         .navbar a {
@@ -80,7 +91,29 @@ if (!isset($_SESSION['usuario'])) {
         }
 
         .navbar a:hover {
-            background-color: #5a0db8;
+            background-color: #000000; /* Color negro al pasar el cursor */
+        }
+
+        /* Botón de cerrar sesión */
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;  /* Reducir el tamaño del padding */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px; /* Reducir el tamaño de la fuente */
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+        /* Sección de usuario */
+        .user-info span {
+            font-weight: bold;
+            margin-right: 10px;
         }
 
         .welcome {
@@ -130,25 +163,27 @@ if (!isset($_SESSION['usuario'])) {
         .card i {
             font-size: 40px;
             margin-bottom: 10px;
-            color: #6a11cb;
+            color: rgb(0, 0, 0);
         }
 
         .card .btn {
             margin-top: 10px;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
+            background: linear-gradient(to right, rgb(0, 0, 0), #1a3b5d);
             color: white;
             border: none;
             border-radius: 25px;
             font-size: 16px;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
         .card .btn:hover {
-            background: linear-gradient(to right, #2575fc, #6a11cb);
+            background: linear-gradient(to right, #1a3b5d, rgb(0, 0, 0));
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Añadir sombra sutil al pasar */
         }
 
         footer {
-            background-color: #6a11cb;
+            background-color: #1a3b5d;
             color: white;
             text-align: center;
             padding: 5px;
@@ -161,18 +196,23 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 
 <body>
-    <!-- Barra de navegación -->
-    <div class="logo-container">
-             <img src="assets/LOGO TST.png" alt="Logo de la Compañía">
-        </div>
-    <div class="navbar">
-        <div class="nav-left">
-            <a href="#" class="">Inicio</a>
-        </div>
-        <div class="user-info">
-            <span>Bienvenido, <?php echo htmlspecialchars($_SESSION['nombre']); ?>!</span>
-            <a href="#" onclick="openSettingsModal();"><i class="fas fa-cog"></i> Ajustes</a>
-            <a href="#" class="btn btn-danger btn-sm" onclick="logoutWithDelay();">Cerrar Sesión</a>
+    <!-- Contenedor principal -->
+    <div class="navbar-container">
+        <!-- Contenedor del Logo con enlace -->
+        <a href="dashboard.php" class="logo-container">
+            <img src="<?php echo $logo_url; ?>" alt="Logo de la Compañía">
+        </a>
+
+        <!-- Barra de navegación -->
+        <div class="navbar">
+            <div>
+                <a href="dashboard.php">Inicio</a>
+            </div>
+            <div class="user-info">
+                <span>Hola, <?php echo htmlspecialchars($_SESSION['nombre']); ?>!</span>
+                <a href="#" onclick="openSettingsModal();"><i class="fas fa-cog"></i> Ajustes</a>
+                <button class="btn-danger" onclick="logoutWithDelay();">Cerrar Sesión</button>
+            </div>
         </div>
     </div>
 
@@ -188,7 +228,7 @@ if (!isset($_SESSION['usuario'])) {
             <i class="fas fa-users"></i>
             <h5>Gestión de Docentes</h5>
             <p>Consulta y gestiona información del personal docente.</p>
-            <a href="#" class="btn btn-primary">Entrar</a>
+            <a href="gestiondocente.php" class="btn btn-primary">Entrar</a>
         </div>
         <div class="card">
             <i class="fas fa-clock"></i>
