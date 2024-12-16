@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // Verificar si el usuario existe (sin filtrar por estado)
+    // Verificar si el usuario existe
     $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE usuario = :usuario");
     $stmt->execute(['usuario' => $usuario]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -25,6 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Credenciales válidas
                 $_SESSION['usuario'] = $user['usuario'];
                 $_SESSION['nombre'] = $user['nombre'];
+                
+                // Asignar el logo según el nombre del usuario
+                if ($usuario == 'admin') {
+                    $_SESSION['tipo_usuario'] = 'admin';  // Logo para admin
+                } elseif ($usuario == 'El triunfo santa teresa') {
+                    $_SESSION['tipo_usuario'] = 'el_triunfo';  // Logo para El triunfo santa teresa
+                } else {
+                    $_SESSION['tipo_usuario'] = 'default';  // Logo por defecto
+                }
+
                 echo "<script>alert('Bienvenido {$user['nombre']}'); window.location.href = 'dashboard.php';</script>";
             } else {
                 // Contraseña incorrecta

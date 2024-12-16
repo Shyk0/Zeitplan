@@ -136,7 +136,7 @@
     <div class="container">
         <div class="login-content">
             <form action="login.php" method="post">
-                <img src="assets/logo.svg" alt="Logo" width="150px">
+                <img src="assets/logoPNG.png" alt="Logo" width="160px">
                 <h2 class="title">Inicio de Sesión</h2>
                 <br>
 
