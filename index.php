@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+    <link rel="icon" type="image/x-icon" href="assets/LogoV.ico">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"> <!-- Font Awesome -->
     <title>Inicio de Sesión</title>
     <style>
@@ -19,11 +19,10 @@
             align-items: center;
             height: 100vh;
             overflow: hidden;
-            background: url('assets/bg2.png') center/cover no-repeat; /* Imagen inicial */
-            animation: backgroundChange 10s infinite; /* Cambia entre las imágenes cada 2 segundos */
+            background: url('assets/bg2.png') center/cover no-repeat;
+            animation: backgroundChange 10s infinite;
         }
 
-        /* Animación de cambio de fondo */
         @keyframes backgroundChange {
             0% {
                 background-image: url('assets/bg2.png');
@@ -39,7 +38,7 @@
         .container {
             max-width: 400px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.8); /* Fondo blanco translúcido */
+            background: rgba(255, 255, 255, 0.8);
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -72,12 +71,12 @@
 
         .input-div .input {
             width: 100%;
-            padding: 15px 15px 15px 50px; /* Aumentado el espacio izquierdo para los iconos */
+            padding: 15px 15px 15px 50px;
             border: 1px solid #ccc;
             border-radius: 25px;
             outline: none;
             transition: border 0.3s;
-            box-sizing: border-box; /* Asegura que el padding no afecte el ancho del input */
+            box-sizing: border-box;
         }
 
         .input-div .input:focus {
@@ -86,7 +85,7 @@
 
         .input-div label {
             position: absolute;
-            left: 50px; /* Mueve la etiqueta un poco a la derecha para que no se monte con el icono */
+            left: 50px;
             top: 50%;
             transform: translateY(-50%);
             font-size: 18px;
@@ -135,7 +134,7 @@
 <body>
     <div class="container">
         <div class="login-content">
-            <form action="login.php" method="post">
+            <form action="carga.php" method="post">
                 <img src="assets/logoPNG.png" alt="Logo" width="160px">
                 <h2 class="title">Inicio de Sesión</h2>
                 <br>
@@ -145,7 +144,7 @@
                     <div class="i">
                         <i class="fas fa-user"></i>
                     </div>
-                    <input type="text" class="input" name="usuario" id="usuario" required placeholder=" ">
+                    <input type="text" class="input" name="usuario" id="usuario" required placeholder=" " autocomplete="off">
                     <label for="usuario">Institución Educativa</label>
                 </div>
 

@@ -28,7 +28,7 @@ if ($_SESSION['usuario'] == 'admin') {
     <title>Panel de Control</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+    <link rel="icon" type="image/x-icon" href="assets/logoV.ico">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -199,14 +199,14 @@ if ($_SESSION['usuario'] == 'admin') {
     <!-- Contenedor principal -->
     <div class="navbar-container">
         <!-- Contenedor del Logo con enlace -->
-        <a href="dashboard.php" class="logo-container">
+        <a href="cargaBtinicio.php" class="logo-container">
             <img src="<?php echo $logo_url; ?>" alt="Logo de la Compañía">
         </a>
 
         <!-- Barra de navegación -->
         <div class="navbar">
             <div>
-                <a href="dashboard.php">Inicio</a>
+                <a href="cargaBtinicio.php">Inicio</a>
             </div>
             <div class="user-info">
                 <span>Hola, <?php echo htmlspecialchars($_SESSION['nombre']); ?>!</span>
@@ -228,7 +228,7 @@ if ($_SESSION['usuario'] == 'admin') {
             <i class="fas fa-users"></i>
             <h5>Gestión de Docentes</h5>
             <p>Consulta y gestiona información del personal docente.</p>
-            <a href="gestiondocente.php" class="btn btn-primary">Entrar</a>
+            <a href="cargaGestiondocente.php" class="btn btn-primary">Entrar</a>
         </div>
         <div class="card">
             <i class="fas fa-clock"></i>
@@ -255,7 +255,7 @@ if ($_SESSION['usuario'] == 'admin') {
             alert("Gracias por usar nuestros servicios. Cerrando sesión...");
             setTimeout(() => {
                 window.location.href = "logout.php";
-            }, 5000); // 5 segundos de espera
+            }, 2000); // 2 segundos de espera
         }
     </script>
 </body>
